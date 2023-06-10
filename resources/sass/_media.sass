@@ -1,0 +1,380 @@
+@import "vars"
+
+//Large: ≥1199px
++media-breakpoint-down(lg)
+	.directions
+		&-item
+			&:before
+				height: calc(100% - 119px)
+			&:after
+				width: 100%
+				left: 0px
+				background-size: contain
+
+//Medium: ≥991px
++media-breakpoint-down(md)
+	.nav
+		&-list
+			&__li
+				font-size: 14px
+				margin-right: 15px
+
+	.benefits
+		&-item
+			&_i1
+				.benefits-item__numb
+					align-self: flex-start
+				.benefits-item__text
+					text-align: left
+			&_i2
+				margin-left: 0
+			&_i3
+				margin-left: 0
+			&_i5
+				margin-left: 0
+			&_i4
+				margin-left: 0
+
+	.directions
+		&__title
+			font-size: 35px
+	
+	.form
+		&__wrap
+			margin-top: 0
+	
+	.foot
+		.form-content
+			margin: 40px auto
+		&-soc
+			justify-content: center
+			&__title
+				text-align: center
+	
+	.dev
+		justify-content: center
+	
+	.modal
+		padding: 80px 40px
+	
+	.pos-sticky
+		position: static
+
+//Small: ≥767px
++media-breakpoint-down(sm)	
+	.nav
+		&__btn
+			width: 50px
+			height: 50px
+			background-color: transparent
+			border: none
+			cursor: pointer
+			display: flex
+			padding: 0
+			float: right
+			.line
+				fill: none
+				stroke: #fff
+				stroke-width: 6
+				transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1)
+				&1
+					stroke-dasharray: 60 207
+					stroke-width: 6
+				&2
+					stroke-dasharray: 60 60
+					stroke-width: 6
+				&3
+					stroke-dasharray: 60 207
+					stroke-width: 6
+			&.open .line
+				&1
+					stroke-dasharray: 90 207
+					stroke-dashoffset: -134
+					stroke-width: 6
+				&2
+					stroke-dasharray: 1 60
+					stroke-dashoffset: -30
+					stroke-width: 6
+				&3
+					stroke-dasharray: 90 207
+					stroke-dashoffset: -134
+					stroke-width: 6
+		&-block
+			overflow: hidden
+			height: 100vh
+			max-width: 0
+			transition: all ease-out .3s
+			position: fixed
+			top: 0
+			left: 0
+			width: 60%
+			padding: 60px 0
+			background: #000
+			z-index: 10
+			flex-direction: column
+			justify-content: space-around
+			&.open
+				max-width: 750px
+		&-list
+			flex-direction: column
+			align-items: center
+			&__li
+				margin-bottom: 20px
+				margin-right: 0
+				font-size: 18px
+				&:last-child
+					margin-bottom: 0
+	
+	.benefits
+		&__title
+			font-size: 32px
+		&__wrap
+			min-height: inherit
+		&__elipse
+			display: none
+		&__elipse2
+			display: none
+		&__image
+			position: static
+		&-item
+			flex-direction: column
+			margin: 0
+			&_i3
+				position: static
+			&_i2
+				float: right
+				align-items: flex-end
+				.benefits-item__text
+					text-align: right
+				.benefits-item__numb
+					margin-left: 0
+					align-self: flex-end
+			&_i4
+				align-self: flex-end
+				align-items: flex-end
+				.benefits-item__text
+					text-align: right
+				.benefits-item__numb
+					margin-right: 0
+					align-self: flex-end
+			&_i5
+				.benefits-item__numb
+					align-self: flex-start
+			&__text
+				text-align: left
+			&__numb
+				margin-left: 0
+				align-items: flex-start
+	
+	.directions
+		&__title
+			font-size: 32px
+		&-logo
+			margin-bottom: 40px
+	
+	.bpla
+		padding-top: 0
+		padding-bottom: 0
+		background-color: transparent
+		&__text
+			&_mini
+				font-size: 14px
+				margin-top: 20px
+	.catalog
+		padding-top: 0
+	
+	.form
+		&__wrap
+			margin-top: 40px
+	
+	.about
+		&-last
+			&__img
+				margin-bottom: 20px
+	
+	.review
+		&-slider_mob
+			padding-bottom: 50px
+			img
+				margin: 0 auto 20px
+			.slick-arrow
+				width: 50px
+				height: 50px
+				background-color: transparent
+				border: 1px solid #D9D9D9
+				border-radius: 50px
+				font-size: 0
+				position: absolute
+				z-index: 2
+				&:before
+					content: ''
+					width: 20px
+					height: 15px
+					background-image: url(/images/slider_arrow.svg)
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					margin: auto
+				&.slick-prev
+					bottom: 0
+					left: 0
+					top: inherit
+					right: inherit
+				&.slick-next
+					bottom: 0
+					right: 0
+					top: inherit
+		&-content
+			&__text
+				width: fit-content
+				margin: 0 auto 20px
+				position: relative
+				right: inherit
+				top: inherit
+			&__flex
+				flex-direction: column
+	
+	.video
+		&-slider
+			width: 100%
+			padding-bottom: 50px
+			margin: 0
+			img
+				margin: 0 auto
+			.slick-arrow
+				width: 50px
+				height: 50px
+				background-color: transparent
+				border: 1px solid #D9D9D9
+				border-radius: 50px
+				font-size: 0
+				position: absolute
+				z-index: 2
+				&:before
+					content: ''
+					width: 20px
+					height: 15px
+					background-image: url(/images/slider_arrow.svg)
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					margin: auto
+				&.slick-prev
+					bottom: 0
+					left: 0
+					top: inherit
+					right: inherit
+				&.slick-next
+					bottom: 0
+					right: 0
+					top: inherit
+					left: inherit
+					&::after
+						display: none
+	
+	.foot
+		&-menu
+			&__item
+				& + &
+					margin-left: 20px
+		&-item
+			margin: 0 20px 20px 0
+			& + &
+				margin-left: 0
+		.form-content
+			.rline
+				max-width: 320px
+			.rline__line
+				display: block
+			&__input
+				width: 100%
+				max-width: 180px
+			
+	.modal
+		&-content
+			justify-content: center
+			&__text
+				max-width: inherit
+				text-align: center
+
+//Extra small: ≥575px
++media-breakpoint-down(xs)
+	.nav
+		&-block
+			width: 75%
+			&.open
+				max-width: 750px
+	.header
+		&-block
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			height: 100%
+		&__title
+			font-size: 28px
+		&__btn
+			margin-bottom: 40px
+	
+	.directions
+		&-item
+			padding: 50px 30px 30px 50px
+			&:before
+				height: calc(100% - 89px)
+				border-bottom: 4px solid #321277
+				border-left: 4px solid #321277
+				border-right: 4px solid #321277
+			&__title
+				p
+					font-size: 25px
+	
+	.catalog
+		&-last
+			&__btn
+				width: 100%
+				background-size: contain
+				font-size: 14px
+				background-position: center
+				background-repeat: no-repeat
+	
+	.form
+		&-content
+			width: inherit
+			flex-direction: column
+			border: none
+			justify-content: center
+			padding-left: 0
+			.rline
+				width: 100%
+				max-width: 280px
+				padding: 10px
+				border: 1px solid #FCF9A9
+				border-radius: 30px
+				margin-bottom: 20px
+				&__line
+					display: none
+				.rfield_error
+					bottom: 4px
+	
+	.about
+		&__title
+			font-size: 25px
+		&__img
+			margin: 0 auto 10px
+	
+	.form2
+		&:after
+			display: none
+	
+	.foot
+		&-menu
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			&__item
+				& + &
+					margin-left: 0
+					margin-top: 10px
