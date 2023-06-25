@@ -5,7 +5,7 @@ if(isset ($_POST['phone'])) {$phonenum=$_POST['phone'];}
 if(isset ($_POST['email'])) {$email=$_POST['email'];}
 
 
-$to = "mashtalir.sasha@gmail.com";
+$to = "u.eye.aero@gmail.com";
 
 $message = "Форма: $title <br><br>";
 if ( $page || $name || $phonenum || $email ) {
@@ -21,7 +21,7 @@ $headers .= 'From: "Заявки с сайта" <no-reply@u-eye.com.ua>';
 
 if (!$title || !$phonenum) {
 } else {
-	mail($to,"New lead(u-eye)",$message,$headers);
+	mail($to,"New lead(u-eye.com.ua)",$message,$headers);
 }
 
 ?>

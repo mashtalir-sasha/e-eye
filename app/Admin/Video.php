@@ -30,5 +30,4 @@ AdminSection::registerModel(Video::class, function (ModelConfiguration $model) {
         ]);
         return $form;
     });
-})->addMenuPage(Video::class, 7)
-    ->setIcon('fas fa-video');
+});

@@ -95,6 +95,9 @@ button
 .header
 	position: relative
 	min-height: 100vh
+	.row.mainHeader
+		height: 300vh
+		max-height: 675px
 	&__video
 		position: absolute
 		top: 0
@@ -725,10 +728,7 @@ button
 		border-radius: 10px
 		border: 2px solid #452B89
 		margin-bottom: 20px
-		filter: grayscale(100%)
 		transition: all ease-out .3s
-		&:hover
-			filter: grayscale(0%)
 	&-last
 		&__img
 			margin-bottom: -17px

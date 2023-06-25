@@ -60,5 +60,4 @@ AdminSection::registerModel(Gallery::class, function (ModelConfiguration $model)
         ]);
         return $form;
     });
-})->addMenuPage(Gallery::class, 6)
-    ->setIcon('fas fa-images');
+});

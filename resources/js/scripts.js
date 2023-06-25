@@ -13,12 +13,28 @@ $(function() {
 		'min-height': 'calc(100vh - '+navHeight+'px)',
 	})
 
+	$('.anchor').bind("click", function(e){
+		const anchor = $(this)
+		$('html, body').stop().animate({
+			scrollTop: $(anchor.attr('href')).offset().top-0 // отступ от меню
+		}, 500)
+	e.preventDefault()
+	})
+
     let toggle = document.querySelector('.nav__btn')
 	let navMob = document.querySelector('.nav-block')
 	let nav = document.querySelector('.nav')
 	toggle.addEventListener('click', function(e) {
 		this.classList.toggle('open')
 		navMob.classList.toggle('open')
+	})
+
+	let clickNav = document.querySelectorAll('.anchor')
+	clickNav.forEach(el => {
+		el.addEventListener("click", () => {
+			toggle.classList.remove('open')
+			navMob.classList.remove('open')
+		})
 	})
 
 	let navLink = document.querySelector('.nav-lang__item')

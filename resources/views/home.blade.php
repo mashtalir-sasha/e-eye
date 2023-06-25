@@ -3,16 +3,16 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Розробляємо БПЛА в Україні</title>
-	<meta name="description" content="Ми самостійно розвиваємо в Україні ринок БПЛА, співпрацюємо з благодійними фондами, волонтерськими організаціями, державними програмами і приватними інвесторами.">
+	<title>{{ trans('main.title') }}</title>
+	<meta name="description" content="{{ trans('main.description') }}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- <link rel="shortcut icon" href="img/favicon/16.png" type="image/x-icon">
-	<link rel="icon" href="/img/favicon/16.png" type="image/x-icon"> 
-	<link rel="apple-touch-icon" href="/img/favicon/16.png">
-	<link rel="apple-touch-icon" sizes="32x32" href="/img/favicon/32.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/72.png">  -->
+	<link rel="shortcut icon" href="{{ asset('images/favicon/16.png') }}" type="image/x-icon">
+	<link rel="icon" href="{{ asset('images//favicon/16.png') }}" type="image/x-icon"> 
+	<link rel="apple-touch-icon" href="{{ asset('images/favicon/16.png') }}">
+	<link rel="apple-touch-icon" sizes="32x32" href="{{ asset('images/favicon/32.png') }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/favicon/72.png') }}"> 
 
 	<meta name="theme-color" content="#08040E">
 
@@ -20,9 +20,29 @@
 
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
+	<meta property="og:title" content="{{ trans('main.title') }}">
+	<meta property="og:description" content="{{ trans('main.description') }}">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ Request::url() }}">
+	<meta property="og:image" content="{{ asset('images/preload.jpg') }}">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-WZHF6K7');</script>
+	<!-- End Google Tag Manager -->
+
+
 </head>
 
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZHF6K7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="preloader">
 	<div class="preloader__item">
@@ -64,22 +84,22 @@
 						<div class="nav-block">
 							<ul class="nav-list">
 								<li class="nav-list__li">
-									<a href="{{ route('home') }}">Головна</a>
+									<a href="{{ route('home') }}">{{ trans('main.menu1') }}</a>
 								</li>
 								<li class="nav-list__li">
-									<a href="#bpla" class="anchor">БПЛА</a>
+									<a href="#bpla" class="anchor">{{ trans('main.menu2') }}</a>
 								</li>
 								<li class="nav-list__li">
-									<a href="#use" class="anchor">Використання</a>
+									<a href="#use" class="anchor">{{ trans('main.menu3') }}</a>
 								</li>
 								<li class="nav-list__li">
-									<a href="#about" class="anchor">Про нас</a>
+									<a href="#about" class="anchor">{{ trans('main.menu4') }}</a>
 								</li>
 								<li class="nav-list__li">
-									<a href="#gallery" class="anchor">Галерея</a>
+									<a href="#gallery" class="anchor">{{ trans('main.menu5') }}</a>
 								</li>
 								<li class="nav-list__li">
-									<a href="#contacts" class="anchor">Контакти</a>
+									<a href="#contacts" class="anchor">{{ trans('main.menu6') }}</a>
 								</li>
 							</ul>
 							<div class="nav-lang">
@@ -105,10 +125,10 @@
 			<div class="row align-items-sm-center mainHeader">
 				<div class="col-md-9 col-lg-7 col-xl-6">
 					<div class="header-block">
-						<h1 class="header__title">Виробництво і розробка безпілотних літальних апаратів</h1>
+						<h1 class="header__title">{{ Helpers::getLangString($main, 'title') }}</h1>
 						<div>
-							<h2 class="header__subtitle">Ми самостійно розвиваємо в Україні ринок БПЛА та співпрацюємо з волонтерськими організаціями, благодійними фондами, державними програмами і приватними інвесторами</h2>
-							<a href="#modal1" class="header__btn fancybox"><span>Замовити дрон</span></a>
+							<h2 class="header__subtitle">{{ Helpers::getLangString($main, 'text') }}</h2>
+							<a href="#modal1" class="header__btn fancybox"><span>{{ trans('main.main_btn') }}</span></a>
 						</div>
 					</div>
 				</div>
@@ -121,7 +141,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h3 class="benefits__title fadeIn">Наші переваги:</h3>
+					<h3 class="benefits__title fadeIn">{{ trans('main.benefits_title') }}</h3>
 				</div>
 			</div>
 		</div>
@@ -136,28 +156,28 @@
 				<div class="col-md-4">
 					<div class="benefits-item benefits-item_i1 fadeIn fadeIn_i1">
 						<span class="benefits-item__numb">01</span>
-						<p class="benefits-item__text">Невразливість до засобів придушення комерційних дронів типу DJI/Autel (Aeroscope та похідні)</p>
+						<p class="benefits-item__text">{{ Helpers::getLangString($benefit, 'item1') }}</p>
 					</div>
 					<div class="benefits-item benefits-item_i2 fadeIn fadeIn_i2">
 						<span class="benefits-item__numb">02</span>
-						<p class="benefits-item__text">Гнучке апаратне забезпечення для передачі інформації з поля бою</p>
+						<p class="benefits-item__text">{{ Helpers::getLangString($benefit, 'item2') }}</p>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="benefits-item benefits-item_i3 fadeIn fadeIn_i3">
 						<span class="benefits-item__numb">03</span>
-						<p class="benefits-item__text">Можливість заміни окремих компонентів комплексу в разі їх втрати  (економія до 25% при заміні втраченого дрона)</p>
+						<p class="benefits-item__text">{{ Helpers::getLangString($benefit, 'item3') }}</p>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="d-flex flex-column">
 						<div class="benefits-item benefits-item_i5 order-2 order-md-1 fadeIn fadeIn_i5">
 							<span class="benefits-item__numb">05</span>
-							<p class="benefits-item__text">Конструювання, виготовлення та ремонт здійснюються в Україні</p>
+							<p class="benefits-item__text">{{ Helpers::getLangString($benefit, 'item5') }}</p>
 						</div>
 						<div class="benefits-item benefits-item_i4 order-1 order-md-2 fadeIn fadeIn_i4">
 							<span class="benefits-item__numb">04</span>
-							<p class="benefits-item__text">Технічна підтримка та обслуговування 24/7</p>
+							<p class="benefits-item__text">{{ Helpers::getLangString($benefit, 'item4') }}</p>
 						</div>
 					</div>
 				</div>
@@ -165,71 +185,49 @@
 		</div>
 	</section>
 
-	<section class="directions scroll">
+	<section id="use" class="directions scroll">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
 					<div class="pos-sticky fadeIn">
-						<h3 class="directions__title">Напрямки використання</h3>
-						<p class="directions__text">Варіативність платформ дозволяє комплектувати наші коптери обладнанням для використання в різних сферах</p>
-						<p class="directions__note">Доступна <span>модифікація БПЛА</span> під індивідуальні потреби замовника</p>
+						<h3 class="directions__title">{{ trans('main.directions_title') }}</h3>
+						<p class="directions__text">{{ trans('main.directions_text1') }}</p>
+						<p class="directions__note">{!! trans('main.directions_text2') !!}</p>
 						<div class="directions-logo">
-							<img src="{{ asset('images/directions_logo.svg') }}" alt="logo" class="directions-logo__logo pulse">
-							<img src="{{ asset('images/directions_sircle.svg') }}" alt="logo" class="directions-logo__sircle rotate">
+							<img src="{{ asset('images/directions_logo2.svg') }}" alt="logo" class="directions-logo__logo pulse">
+							<img src="{{ asset('images/directions_sircle2.svg') }}" alt="logo" class="directions-logo__sircle rotate">
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-8 fadeIn">
+					@foreach($directions as $item)
 					<div class="directions-item">
 						<div class="directions-item__title">
-							<img src="{{ asset('images/directions_ico1.svg') }}" alt="ico">
-							<p>Сили оборони</p>
+							<img src="{{ asset($item->ico) }}" alt="ico">
+							<p>{{ Helpers::getLangString($item, 'title') }}</p>
 						</div>
-						<div class="directions-item__text">Розроблені у даний момент БПЛА є повноцінними бойовими машинами та можуть виконувати наступні задачі:<ul><li>Розвідка ближнього краю</li><li>Артилерійське коригування у глибині до 10 км</li><li>Вогневе ураження боєприпасами зі спеціальної системи скиду</li></div>
+						<div class="directions-item__text">{!! Helpers::getLangString($item, 'text') !!}</div>
 					</div>
-					<div class="directions-item">
-						<div class="directions-item__title">
-							<img src="{{ asset('images/directions_ico2.svg') }}" alt="ico">
-							<p>Агросектор</p>
-						</div>
-						<div class="directions-item__text">Дрон призначенний для оприскування сільськогосподарських угідь та моніторингу їх стану</div>
-					</div>
-					<div class="directions-item">
-						<div class="directions-item__title">
-							<img src="{{ asset('images/directions_ico3.svg') }}" alt="ico">
-							<p>Служби охорони</p>
-						</div>
-						<div class="directions-item__text">Охорона стаціонарних та стратегічних об'єктів.<br>Системи повітряного спостереження та моніторингу</div>
-					</div>
-					<div class="directions-item">
-						<div class="directions-item__title">
-							<img src="{{ asset('images/directions_ico4.svg') }}" alt="ico">
-							<p>Рятувальні служби</p>
-						</div>
-						<div class="directions-item__text">Розмінування території, моніторинг надзвичайних ситуацій</div>
-					</div>
-					<div class="directions-item">
-						<div class="directions-item__title">
-							<img src="{{ asset('images/directions_ico5.svg') }}" alt="ico">
-							<p>Промисловий сектор</p>
-						</div>
-						<div class="directions-item__text">Моніторинг та інспекція промислових об'єктів</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 			<img src="{{ asset('images/directions_img.svg') }}" alt="img" class="directions__image d-none d-lg-block">
 		</div>
 	</section>
 
-	<section class="bpla scroll">
+	<section id="bpla" class="bpla scroll">
 		<div class="container">
 			<div class="row justify-content-around">
 				<div class="col-lg-4 col-md-6 order-2 order-md-1 fadeInLeft">
-					<p class="bpla__text bpla__text_mini">Наші БПЛА розроблені з урахуванням довготривалих консультацій з представниками різних підрозділів Сил оборони: механізованих, артилерійських, єгерських бригад, бригад морської піхоти, а також операторів ССО ЗСУ.  Відповідно, апарати максимально відповідають побажанням замовників з різних силових структур - розроблені у даний момент БПЛА є повноцінними бойовими машинами, що протестовані досвідченими операторами, які мають досвід бойової роботи і підтвердили придатність апаратів до бойового використання.</p>
+					<p class="bpla__text bpla__text_mini">{{ Helpers::getLangString($bpla, 'text1') }}</p>
 				</div>
 				<div class="col-lg-5 col-md-6 order-1 order-md-2 fadeInRight">
-					<img src="{{ asset('images/bpla_img.svg') }}" alt="bpla" class="bpla__image">
-					<p class="bpla__text">Архітектура наших безпілотних комплексів побудована на основі трьох основних компонентів: контролера (пульта керування), літального апарата та додаткових засобів для транспортування (кейс/рюкзак) і подовження польотного ресурсу (резервні акумуляторні батареї, ЗІП тощо). Комплекс є портативним (переноситься однією особою) і в момент поставки містить усе необхідне і налаштоване для зручної роботи програмне забезпечення.</p>
+					@if(app()->getLocale() == 'uk')
+						<img src="{{ asset('images/bpla_img.svg') }}" alt="bpla" class="bpla__image">
+					@else
+						<img src="{{ asset('images/uavs.svg') }}" alt="bpla" class="bpla__image">
+					@endif
+					<p class="bpla__text">{{ Helpers::getLangString($bpla, 'text2') }}</p>
 				</div>
 			</div>
 		</div>
@@ -237,46 +235,59 @@
 
 	<section class="catalog">
 		<div class="container">
-			<div class="row align-items-center scroll">
-				<div class="col-md-6 fadeIn">
-					<img src="{{ asset('images/kruk.png') }}" alt="kruk" class="catalog-item__image">
-					<img src="{{ asset('images/kruk_note.svg') }}" alt="kruk" class="catalog-item__note">
-					<a href="https://www.youtube.com/watch?v=CWomYft5Sr0" class="catalog-youtube" data-fancybox>
-						<img src="{{ asset('images/youtube_btn.svg') }}" alt="youtube" class="catalog-youtube__ico">
-						<p class="catalog-youtube__text">дивитись відео</p>
-					</a>
-				</div>
-				<div class="col-lg-5 col-md-6 catalog-item__line fadeIn">
-					<h3 class="catalog-item__title">U-Eye Kruk</h3>
-					<div class="catalog-item__text">БПЛА-квадрокоптер, призначений для виконання задач артилерійського коригування, спостереження і розвідки у ближній тактичній глибині на відстані до 7-10 км.<br>За рахунок великого діаметру пропелерів і потужної силової установки дрон може виконувати задачі спостереження на висоті понад 300 м, поза межею видимості апарата, що робить БПЛА менш помітним порівняно з аналогічними коптерами для коригування.<br>30-кратна камера та силова установка дрона дозволяють здійснювати спостереження і коригування на висотах до 1500 м.</div>
-					<div class="catalog-button">
-						<a href="#details1" class="catalog-button__btn catalog-button__btn_first fancybox">Характеристики</a>
-						<a href="#modal1" class="catalog-button__btn fancybox">Замовити</a>
-					</div>
-				</div>
-			</div>
-			<div class="row align-items-center scroll">
+			@foreach($catalog as $item)
+				@if( $loop->iteration % 2 === 0 )
+				<div class="row align-items-center scroll">
 				<div class="col-lg-5 offset-lg-1 col-md-6 order-2 order-md-1 catalog-item__line fadeIn">
-					<h3 class="catalog-item__title">U-Eye Shulika</h3>
-					<div class="catalog-item__text">Ударний БПЛА-квадрокоптер, розвідник ближнього краю з можливістю спорядження гранатометними боєприпасами ВОГ-17М для роботи по живій силі та не броньованій техніці супротивника. Вертикальне розташування боєприпасів на дроні дозволяє збільшити точність скидання у порівнянні з аналогами. Конструкція системи скиду є не кустарним доповненням, а повноцінною розробленою підсистемою дрона, що забезпечує надійність і зручність у користуванні.</div>
+					<h3 class="catalog-item__title">{{ Helpers::getLangString($item, 'title') }}</h3>
+					<div class="catalog-item__text">{!! Helpers::getLangString($item, 'text') !!}</div>
 					<div class="catalog-button">
-						<a href="#details2" class="catalog-button__btn catalog-button__btn_first fancybox">Характеристики</a>
-						<a href="#modal1" class="catalog-button__btn fancybox">Замовити</a>
+						<a href="#details{{ $item->id }}" class="catalog-button__btn catalog-button__btn_first fancybox">{{ trans('main.catalog_btn2') }}</a>
+						<a href="#modal1" class="catalog-button__btn fancybox">{{ trans('main.catalog_btn3') }}</a>
 					</div>
 				</div>
 				<div class="col-md-6 order-1 order-md-2 fadeIn">
-					<img src="{{ asset('images/shulika.png') }}" alt="shulika" class="catalog-item__image">
-					<img src="{{ asset('images/shulika_note.svg') }}" alt="kruk" class="catalog-item__note catalog-item__note_i2">
-					<a href="#" class="catalog-youtube catalog-youtube_i2">
-						<img src="{{ asset('images/youtube_btn.svg') }}" alt="youtube" class="catalog-youtube__ico">
-						<p class="catalog-youtube__text">дивитись відео</p>
-					</a>
+					<img src="{{ asset($item->image) }}" alt="shulika" class="catalog-item__image">
+					@if( isset($item->photo) )
+						<img src="{{ asset($item->photo) }}" alt="kruk" class="catalog-item__note catalog-item__note_i2">
+					@endif
+					@if( isset($item->video) )
+						<a href="{{ $item->video }}" class="catalog-youtube catalog-youtube_i2" data-fancybox>
+							<img src="{{ asset('images/youtube_btn.svg') }}" alt="youtube" class="catalog-youtube__ico">
+							<p class="catalog-youtube__text">{{ trans('main.catalog_btn1') }}</p>
+						</a>
+					@endif
 				</div>
 			</div>
+				@else
+				<div class="row align-items-center scroll">
+					<div class="col-md-6 fadeIn">
+						<img src="{{ asset($item->image) }}" alt="kruk" class="catalog-item__image">
+						@if( isset($item->photo) )
+							<img src="{{ asset($item->photo) }}" alt="kruk" class="catalog-item__note">
+						@endif
+						@if( isset($item->video) )
+							<a href="{{ $item->video }}" class="catalog-youtube" data-fancybox>
+								<img src="{{ asset('images/youtube_btn.svg') }}" alt="youtube" class="catalog-youtube__ico">
+								<p class="catalog-youtube__text">{{ trans('main.catalog_btn1') }}</p>
+							</a>
+						@endif
+					</div>
+					<div class="col-lg-5 col-md-6 catalog-item__line fadeIn">
+						<h3 class="catalog-item__title">{{ Helpers::getLangString($item, 'title') }}</h3>
+						<div class="catalog-item__text">{!! Helpers::getLangString($item, 'text') !!}</div>
+						<div class="catalog-button">
+							<a href="#details{{ $item->id }}" class="catalog-button__btn catalog-button__btn_first fancybox">{{ trans('main.catalog_btn2') }}</a>
+							<a href="#modal1" class="catalog-button__btn fancybox">{{ trans('main.catalog_btn3') }}</a>
+						</div>
+					</div>
+				</div>
+				@endif
+			@endforeach
 			<div class="row justify-content-center scroll">
 				<div class="col-lg-10 fadeIn">
-					<p class="catalog-last__text"><span>Ми надаємо комплексне обслуговування своїх виробів, ремонт та модернізація апаратів здійснюються на власних виробничих потужностях в Україні.</span><br>Дрони є адаптованими під потреби замовника, побудованими на ретельно протестованій платформі з визначеними характеристиками та можуть бути полагоджені і продіагностовані в Україні. Виробники масових комерційних дронів не мають такої гнучкості, яку надаємо ми. Наш ключовий метод вдосконалення виробу - тісна взаємодія із користувачем, націлення не на масові, а індивідуальні потреби.</p>
-					<a href="https://docs.google.com/presentation/d/1hBHVwOZELQ_7NSD5f8RERQCbcTQxIbTyH1S0ucXWw8g/edit?usp=drivesdk" target="_blank" class="catalog-last__btn"><span>Подивитись всі характеристики</span></a>
+					<p class="catalog-last__text"><span>{{ Helpers::getLangString($after, 'text1') }}</span><br>{{ Helpers::getLangString($after, 'text2') }}</p>
+					<a href="{{ Helpers::getLangString($after, 'link') }}" target="_blank" class="catalog-last__btn"><span>{{ trans('main.uav-last_btn') }}</span></a>
 				</div>
 			</div>
 		</div>
@@ -290,57 +301,61 @@
 					<img src="{{ asset('images/form_img.png') }}" alt="dron" class="form__img">
 				</div>
 				<div class="col-lg-5 col-md-6 fadeIn">
-					<p class="form__text"><span>Випробування та демонстрація</span> апаратів <span>відбуваються з умовами, необхідними для імітації роботи БПЛА у робочому середовищі,</span> для максимальної відповідності та синхронізації з потребами замовника</p>
+					<p class="form__text">{!! trans('main.form_text1') !!}</p>
 				</div>
 			</div>
 			<div class="row form__wrap fadeIn">
 				<div class="col-lg-8 offset-lg-3">
-					<h3 class="form__title">Можемо здійснювати виїзди до клієнтів за попередньою домовленостю,  <span>залишайте заявку, ми відповімо на всі запитання!</span></h3>
-					<form class="form-content form_check">
-					<input type="hidden" name="title" value="Консультація">
+					<h3 class="form__title">{!! trans('main.form_text2') !!}</h3>
+					<form class="form-content form_check" autocomplete="false">
+					<input type="hidden" name="title" value="{{ trans('main.form1') }}">
 						<label class="rline">
-							<p>Ваше ім'я:</p>
+							<p>{{ trans('main.name') }}</p>
 							<input type="text" class="form-content__input rfield" name="name">
 						</label>
 						<span class="rline__line"></span>
 						<label class="rline">
-							<input type="text" class="form-content__input rfield phonefield" name="phone" placeholder="+38 (0__) ___-__-__">
+							<input type="text" class="form-content__input rfield" name="phone" placeholder="{{ trans('main.placeholder') }}">
 						</label>
-						<button type="submit" class="form-content__btn btnsubmit">Відправити</button>
+						<button type="submit" class="form-content__btn btnsubmit">{{ trans('main.submit') }}</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="about">
+	<section id="about" class="about">
 		<div class="container">
 			<div class="row justify-content-center scroll">
 				<div class="col-lg-10 about__wrap">
 					<div class="row">
 						<div class="col fadeIn">
-							<h3 class="about__title">Про нас</h3>
-							<p class="about__text"><span>U-Eye виникла як волонтерська ініціатива зі створення БПЛА для розвідки, спостереження і коригування для зростаючих потреб Сил оборони України,</span> що виникли влітку 2022 року. <span>Заснована спеціалістами з експериментального авіа- і ракетобудування,</span> ініціатива займається адаптацією своїх попередніх розробок для використання у найбільш актуальний оборонній галузі. <span>Командою спеціалістів ініціативи була розроблена платформа - БПЛА-квадрокоптер, що могла використовуватись у широкому спектрі задач - від розвідувальних</span> (з використанням належних засобів спостереження) до ударних (для коптера була розроблена спеціальна система скиду боєприпасів).</p>
+							<h3 class="about__title">{{ trans('main.about_title') }}</h3>
+							<div class="about__text">{!! Helpers::getLangString($about, 'text1') !!}</div>
 						</div>
 					</div>
 					<div class="row scroll">
+						@foreach($about->images as $item)
+						@if($loop->iteration == 1 || $loop->iteration == 4)
 						<div class="col-md-4 col-sm-6 fadeIn fadeIn_i1">
-							<img src="{{ asset('images/about1.jpg') }}" alt="about" class="about__img">
-						</div>
+						@elseif($loop->iteration == 2 || $loop->iteration == 5)
 						<div class="col-md-4 col-sm-6 fadeIn fadeIn_i3">
-						<img src="{{ asset('images/about2.jpg') }}" alt="about" class="about__img">
-						</div>
+						@elseif($loop->iteration == 3 || $loop->iteration == 6)
 						<div class="col-md-4 col-sm-6 fadeIn fadeIn_i5">
-						<img src="{{ asset('images/about3.jpg') }}" alt="about" class="about__img">
+						@else
+						<div class="col-md-4 col-sm-6 fadeIn fadeIn_i1">
+						@endif
+							<img src="{{ asset($item) }}" alt="about" class="about__img">
 						</div>
+						@endforeach
 					</div>
 					<div class="row align-items-center scroll">
 						<div class="col-md-6 fadeIn fadeIn_i1">
 							<img src="{{ asset('images/about_img.png') }}" alt="about" class="about-last__img">
 						</div>
 						<div class="col-md-6 fadeIn fadeIn_i3">
-						<p class="about-last__text">У даний момент ініціатива трансформувалась у повноцінну інженерну команду, що розробляє платформи мультироторного типу для використання у різних галузях промисловості.</p>
-						<p class="about-last__text"><span>Після 24.02.2022 ми вирішили зміцнити обороноздатність нашої країни та допомогти нашій армії власноруч розробленими засобами спостереження, коригування та вогневого ураження.</span> Так народився прототип мультироторної платформи, що згодом еволюціонував у бойові коптери - <span>дрони Kruk 1.0 і Shulika 1.0.</span></p>
+						<div class="about-last__text">{!! Helpers::getLangString($about, 'text2') !!}</div>
+						<div class="about-last__text">{!! Helpers::getLangString($about, 'text3') !!}</div>
 						</div>
 					</div>
 				</div>
@@ -348,17 +363,17 @@
 		</div>
 	</section>
 
-	<section class="review">
+	<section id="gallery" class="review">
 		<div class="container">
 			<div class="row justify-content-center scroll">
 				<div class="col-md-10">
-					<h3 class="review__title fadeInRight">Огляд БПЛА</h3>
+					<h3 class="review__title fadeInRight">{{ trans('main.review_title') }}</h3>
 					<div class="review__wrap fadeInRight">
-						<p class="review__text">Усе виробництво має адаптивний характер - ми розглядаємо індивідуальний запит замовника і вирішуємо окрему інженерну задачу зі спорядження мультироторної платформи необхідним для роботи обладнанням.</p>
+						<p class="review__text">{{ trans('main.review_text') }}</p>
 						<img src="{{ asset('images/review_img.svg') }}" alt="review" class="review__img d-none d-sm-block">
 					</div>
 					<div class="review-content scroll">
-						<p class="review-content__text">фото</p>
+						<p class="review-content__text">{{ trans('main.photo') }}</p>
 						<div class="review-slider d-none d-md-block fadeIn">
 						@foreach($gallery as $item)
 							<div class="review-slider__slide">
@@ -405,7 +420,7 @@
 					</div>
 
 					<div class="review-content review-content__flex scroll">
-						<p class="review-content__text">відео</p>
+						<p class="review-content__text">{{ trans('main.video') }}</p>
 						<div class="video-slider fadeIn">
 						@foreach($videos as $item)
 							<div class="video-slider__slide">
@@ -424,97 +439,109 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 offset-lg-1">
-					<h3 class="form2__title fadeIn fadeIn_i1">Ми самостійно розвиваємо в Україні ринок мультироторних БПЛА,   співпрацюємо з благодійними фондами, волонтерськими організаціями, державними програмами і приватними інвесторами. <span>Бажаєте співпрацювати? Надсилайте заявку за формою:</span></h3>
-					<form class="form-content form_check fadeIn fadeIn_i3">
-					<input type="hidden" name="title" value="Заявка на співпрацю">
+					<h3 class="form2__title fadeIn fadeIn_i1">{!! trans('main.form2_text') !!}</span></h3>
+					<form class="form-content form_check fadeIn fadeIn_i3" autocomplete="false">
+					<input type="hidden" name="title" value="{{ trans('main.form2') }}">
 						<label class="rline">
-							<p>Ваше ім'я:</p>
+							<p>{{ trans('main.name') }}</p>
 							<input type="text" class="form-content__input rfield" name="name">
 						</label>
 						<span class="rline__line"></span>
 						<label class="rline">
-							<input type="text" class="form-content__input rfield phonefield" name="phone" placeholder="+38 (0__) ___-__-__">
+							<input type="text" class="form-content__input rfield" name="phone" placeholder="{{ trans('main.placeholder') }}">
 						</label>
-						<button type="submit" class="form-content__btn btnsubmit">Відправити</button>
+						<button type="submit" class="form-content__btn btnsubmit">{{ trans('main.submit') }}</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<footer class="foot">
+	<footer id="contacts" class="foot">
 		<div class="container">
 			<div class="row justify-content-between align-items-end">
 				<div class="col-lg-9">
 					<ul class="foot-menu">
 						<li class="foot-menu__item">
-							<a href="#">Головна</a>
+							<a href="#">{{ trans('main.menu1') }}</a>
 						</li>
 						<li class="foot-menu__item">
-							<a href="#">БПЛА</a>
+							<a href="#bpla" class="anchor">{{ trans('main.menu2') }}</a>
 						</li>
 						<li class="foot-menu__item">
-							<a href="#">Використання</a>
+							<a href="#use" class="anchor">{{ trans('main.menu3') }}</a>
 						</li>
 						<li class="foot-menu__item">
-							<a href="#">Про нас</a>
+							<a href="#about" class="anchor">{{ trans('main.menu4') }}</a>
 						</li>
 						<li class="foot-menu__item">
-							<a href="#">Галерея</a>
+							<a href="#gallery" class="anchor">{{ trans('main.menu5') }}</a>
 						</li>
 						<li class="foot-menu__item">
-							<a href="#">Контакти</a>
+							<a href="#contacts" class="anchor">{{ trans('main.menu6') }}</a>
 						</li>
 					</ul>
 					<div class="foot__wrap">
 						<div class="foot-item">
 							<img src="{{ asset('images/foot_addr.svg') }}" alt="addr">
-							<p>Україна м.Київ</p>
+							<p>{{ Helpers::getLangString($contact, 'address') }}</p>
 						</div>
-						<a href="tel:+380676340919" class="foot-item">
+						<a href="tel:+{{ preg_replace('~[^0-9]~','',$contact['phone1']) }}" class="foot-item">
 							<img src="{{ asset('images/foot_phone.svg') }}" alt="addr">
-							<p>+380676340919</p>
+							<p>{{ $contact->phone1 }}</p>
 						</a>
-						<a href="tel:+380969603434" class="foot-item">
+						@if( isset($contact->phone2) )
+						<a href="tel:+{{ preg_replace('~[^0-9]~','',$contact['phone2']) }}" class="foot-item">
 							<img src="{{ asset('images/foot_phone.svg') }}" alt="addr">
-							<p>+380969603434</p>
+							<p>{{ $contact->phone2 }}</p>
 						</a>
-						<a href="mailto:u.eye.aero@gmail.com" class="foot-item">
+						@endif
+						<a href="mailto:{{ $contact->email }}" class="foot-item">
 							<img src="{{ asset('images/foot_email.svg') }}" alt="addr">
-							<p>u.eye.aero@gmail.com</p>
+							<p>{{ $contact->email }}</p>
 						</a>
 					</div>
-					<form class="form-content form_check">
-						<input type="hidden" name="title" value="Напишіть нам">
+					<form class="form-content form_check" autocomplete="false">
+						<input type="hidden" name="title" value="{{ trans('main.form3') }}">
 						<label class="rline">
-							<p>Напишіть нам</p>
+							<p>{{ trans('main.contact_form') }}</p>
 							<span class="rline__line"></span>
-							<input type="text" class="form-content__input rfield" name="email" placeholder="Ваш e-mail">
+							<input type="text" class="form-content__input rfield" name="email" placeholder="{{ trans('main.email') }}">
 						</label>
-						<button type="submit" class="form-content__btn btnsubmit">Відправити</button>
+						<button type="submit" class="form-content__btn btnsubmit">{{ trans('main.submit') }}</button>
 					</form>
 				</div>
 				<div class="col-lg-2">
-					<p class="foot-soc__title">Соціальні мережі</p>
+					<p class="foot-soc__title">{{ trans('main.soc') }}</p>
 					<div class="foot-soc">
-						<a href="#" class="foot-soc__link">
+						@if( isset($contact->facebook) )
+						<a href="{{ $contact->facebook }}" target="_blank" class="foot-soc__link">
 							<img src="{{ asset('images/facebook.svg') }}" alt="facebook">
 						</a>
-						<a href="https://instagram.com/u.eye.aero" class="foot-soc__link">
+						@endif
+						@if( isset($contact->instagram) )
+						<a href="{{ $contact->instagram }}" target="_blank" class="foot-soc__link">
 							<img src="{{ asset('images/instagram.svg') }}" alt="instagram">
 						</a>
-						<a href="https://www.youtube.com/@U-Eye" class="foot-soc__link">
+						@endif
+						@if( isset($contact->youtube) )
+						<a href="{{ $contact->youtube }}" target="_blank" class="foot-soc__link">
 							<img src="{{ asset('images/youtube.svg') }}" alt="youtube">
 						</a>
-						<a href="https://twitter.com/UEyeAero" class="foot-soc__link">
+						@endif
+						@if( isset($contact->twiter) )
+						<a href="{{ $contact->twiter }}" target="_blank" class="foot-soc__link">
 							<img src="{{ asset('images/twiter.svg') }}" alt="twiter">
 						</a>
-						<!-- <a href="#" class="foot-soc__link">
+						@endif
+						@if( isset($contact->tiktok) )
+						<a href="{{ $contact->tiktok }}" class="foot-soc__link">
 							<img src="{{ asset('images/tiktok.svg') }}" alt="tiktok">
-						</a> -->
+						</a>
+						@endif
 					</div>
 					<a href="https://wamp.com.ua/" rel="nofollow" target="_blank" class="dev">
-						<p class="dev__text">Розробка сайту:</p>
+						<p class="dev__text">{{ trans('main.dev') }}</p>
 						<img src="{{ asset('images/dev_logo.svg') }}" alt="wamp" class="dev__ico">
 					</a>
 				</div>
@@ -523,131 +550,67 @@
 	</footer>
 	
 	<footer class="cprt">
-		<p class="cprt__text">Всі права захищено. Україна, Київ © {{ date('Y') }}.</p>
+		<p class="cprt__text">{{ trans('main.cprt') }} © {{ date('Y') }}.</p>
 	</footer>
 	
 </div>
 
 <div class="d-none">
-	<div id="details1" class="details">
+	@foreach($catalog as $item)
+	<div id="details{{ $item->id }}" class="details">
 		<div class="details__wrap">
-			<h3 class="details__title">Загальні характеристики Kruk</h3>
+			<h3 class="details__title">{{ trans('main.details_title') }} {{ $item->title }}</h3>
 			<table class="details-table">
+			@if( app()->getLocale() == 'uk')
+			@foreach( json_decode($item->list) as $item )
 				<tr>
-					<td>Маса (з наванттаженням, 30x оптика)</td>
-					<td>3.6 кг</td>
+					<td>{{ $item->key }}</td>
+					<td>{{ $item->value }}</td>
 				</tr>
+			@endforeach
+			@else
+			@foreach( json_decode($item->listEN) as $item )
 				<tr>
-					<td>Корисне навантаження</td>
-					<td>1 кг</td>
+					<td>{{ $item->key }}</td>
+					<td>{{ $item->value }}</td>
 				</tr>
-				<tr>
-					<td>Час польоту</td>
-					<td>32 хв</td>
-				</tr>
-				<tr>
-					<td>Час зарядки акумулятора 5000 mAh (НОТА D6pro, 5A)</td>
-					<td>65 хв</td>
-				</tr>
-				<tr>
-					<td>Роздільна здантість зйомки</td>
-					<td>FullHD 1080р</td>
-				</tr>
-				<tr>
-					<td>Оптичний зум</td>
-					<td>10х</td>
-				</tr>
-				<tr>
-					<td>Гібрідний зум</td>
-					<td>30х</td>
-				</tr>
-				<tr>
-					<td>ПЗ керування</td>
-					<td>QGroundControl (open source)/SIYI FPV</td>
-				</tr>
-				<tr>
-					<td>Бойовий радіус</td>
-					<td>7 км</td>
-				</tr>
-				<tr>
-					<td>Максимална швідість польоту</td>
-					<td>20 м/с (72 км/год)</td>
-				</tr>
-			</table>
-		</div>
-		
-	</div>
-
-	<div id="details2" class="details">
-		<div class="details__wrap">
-			<h3 class="details__title">Загальні характеристики Shulika</h3>
-			<table class="details-table">
-				<tr>
-					<td>Маса (з наванттаженням, камера+2 ВОГ -17М)</td>
-					<td>4.2 кг</td>
-				</tr>
-				<tr>
-					<td>Корисне навантаження</td>
-					<td>1 кг</td>
-				</tr>
-				<tr>
-					<td>Час польоту</td>
-					<td>25 хв</td>
-				</tr>
-				<tr>
-					<td>Час зарядки акумулятора батарії 2x3700 mAh (НОТА D6pro, 2x3.7A)</td>
-					<td>65 хв</td>
-				</tr>
-				<tr>
-					<td>Роздільна здантість зйомки</td>
-					<td>720р</td>
-				</tr>
-				<tr>
-					<td>Можливість стрімінгу</td>
-					<td>Так</td>
-				</tr>
-				<tr>
-					<td>ПЗ керування</td>
-					<td>QGroundControl SIYI FPV (Andriod)</td>
-				</tr>
-				<tr>
-					<td>Бойовий радіус</td>
-					<td>5 км</td>
-				</tr>
-				<tr>
-					<td>Максимална швідість польоту</td>
-					<td>15 м/с (54 км/год)</td>
-				</tr>
+			@endforeach
+			@endif
 			</table>
 		</div>
 	</div>
+	@endforeach
 
 	<div id="modal1" class="modal">
 		<div class="modal__wrap">
+			@if(app()->getLocale() == 'uk')
 			<img src="{{ asset('images/modal_bpla.svg') }}" alt="bpla" class="modal__ico">
+			@else
+			<img src="{{ asset('images/modal_bpla2.svg') }}" alt="bpla" class="modal__ico">
+			@endif
 			<div class="modal-content">
 				<img src="{{ asset('images/modal_img.svg') }}" alt="bpla" class="modal-content__img">
-				<p class="modal-content__text">Ми робимо бойові БПЛА під кожні потреби та об’єми індивідуально</p>
+				<p class="modal-content__text">{{ trans('main.modal_title') }}</p>
 			</div>
-			<h3 class="modal__title">Залишіть ваш контактий номер та ми проговоримо ціну та терміни виготовлення</h3>
-			<form class="form-content form_check">
-				<input type="hidden" name="title" value="Обговорити ціну та терміни">
+			<h3 class="modal__title">{{ trans('main.modal_text') }}</h3>
+			<form class="form-content form_check" autocomplete="false">
+				<input type="hidden" name="title" value="{{ trans('main.form4') }}">
 				<label class="rline">
-					<p>Ваше ім'я:</p>
+					<p>{{ trans('main.name') }}</p>
 					<input type="text" class="form-content__input rfield" name="name">
 				</label>
 				<span class="rline__line"></span>
 				<label class="rline">
-					<input type="text" class="form-content__input rfield phonefield" name="phone" placeholder="+38 (0__) ___-__-__">
+					<input type="text" class="form-content__input rfield" name="phone" placeholder="{{ trans('main.placeholder') }}">
 				</label>
-				<button type="submit" class="form-content__btn btnsubmit">Відправити</button>
+				<button type="submit" class="form-content__btn btnsubmit">{{ trans('main.submit') }}</button>
 			</form>
 		</div>
 	</div>
 
 	<div id="thn" class="thn">
-		<h3>Дякуємо! Заявка відправлена!</h3>
-		<p>Ми з вами зв'яжемось найюлижчим часом.</p>
+		<h3>{{ trans('main.thn_title') }}</h3>
+		<p>{{ trans('main.thn_text') }}</p>
 	</div>
 </div>
 
